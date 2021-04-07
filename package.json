@@ -1,6 +1,6 @@
 {
   "name": "ts-transactions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A functional transactions API for TypeScript.",
   "repository": "git@github.com:Claeb101/ts-transactions.git",
   "author": "Alvan Caleb Arulandu",
