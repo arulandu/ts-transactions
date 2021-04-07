@@ -21,13 +21,16 @@ jobs:
       run: npm install # prepare is run as well
     - name: Change Version
       env: 
+        GITHUB_CONTEXT: $${{toJson(github)}}
         TAG_NAME: ${{github.event.release.tag_name}}
+        REMOTE_REPO: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.it
       run: |
         git config user.name "Claeb101";
         npm version "$TAG_NAME";
         git branch -v;
         git remote -v;
-        git push --set-upstream origin main;
+        echo "$REMOTE_REPO"
+        git push $REMOTE_REPO HEAD:main;
     # - name: Publish to npm
     #   run: npm publish
     #   env:
