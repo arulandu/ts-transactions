@@ -25,7 +25,6 @@ jobs:
       run: |
         git config user.name "Claeb101";
         npm version "$TAG_NAME";
-        git remote add origin https://github.com/Claeb101/ts-transactions.git;
         git push --set-upstream origin main;
     # - name: Publish to npm
     #   run: npm publish
