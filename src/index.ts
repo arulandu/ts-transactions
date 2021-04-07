@@ -1,8 +1,7 @@
-import { Transaction } from './transaction'
+import { transaction } from './transaction'
 
-const transaction = new Transaction()
 let x = 0
-transaction
+transaction()
 	.add(() => {
 		console.log('p1')
 		x++

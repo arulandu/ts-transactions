@@ -1,11 +1,6 @@
-/*
-
-transaction()
-    .add(() => {})
-    .add(() => {})
-    .rollback()
-    .add(() => {})
-*/
+export function transaction(): Transaction {
+	return new Transaction()
+}
 
 export class Transaction {
 	processes: Process[]
