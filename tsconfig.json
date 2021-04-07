@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+		"experimentalDecorators": true,
+        "lib": ["ESNext", "DOM"],
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES2019",
+        "incremental": true,
+        "alwaysStrict": true,
+        "strictNullChecks": true
+    },
+}
