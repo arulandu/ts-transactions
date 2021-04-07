@@ -22,7 +22,7 @@ jobs:
     - name: Log
       run: echo ${{github.event.release.tag_name}}
     - name: Set version
-      run: echo $TAG_NAME; npm version $TAG_NAME
+      run: echo "x"; echo $TAG_NAME; echo "x2"; npm version $TAG_NAME
       env: 
         TAG_NAME: ${{github.event.release.tag_name}}
     # - name: Publish to npm
