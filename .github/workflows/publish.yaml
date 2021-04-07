@@ -24,17 +24,10 @@ jobs:
       run: npm install # prepare is run as well
     - name: Change Version
       env: 
-        GITHUB_CONTEXT: $${{toJson(github)}}
         TAG_NAME: ${{github.event.release.tag_name}}
-        ADMIN_PASS: ${secrets.ADMIN_GITHUB_TOKEN}
         REMOTE_REPO: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
       run: |
-        git config user.name "Claeb101";
-        git config user.password "$ADMIN_PASS";
-        git config --list;
         npm version "$TAG_NAME";
-        git branch -v;
-        git remote -v;
         git push $REMOTE_REPO HEAD:main;
     # - name: Publish to npm
     #   run: npm publish
