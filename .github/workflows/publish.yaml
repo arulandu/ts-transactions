@@ -19,12 +19,11 @@ jobs:
         registry-url: https://registry.npmjs.org/
     - name: Install Packages
       run: npm install # prepare is run as well
-    - name: Log
-      run: echo ${{github.event.release.tag_name}}
-    - name: Set version
-      run: echo "x"; echo "$TAG_NAME"; echo "x2"; npm version $TAG_NAME
+    - name: Debug
       env: 
         TAG_NAME: ${{github.event.release.tag_name}}
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"; echo "$TAG_NAME";
     # - name: Publish to npm
     #   run: npm publish
     #   env:
