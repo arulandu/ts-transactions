@@ -2,6 +2,9 @@
   "name": "ts-transactions",
   "version": "1.0.0",
   "description": "A functional transactions API for TypeScript.",
+  "repository": {
+    "url": "https://github.com/Claeb101/ts-transactions"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
