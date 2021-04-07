@@ -3,7 +3,7 @@ This repository contains a functional transactions API for TypeScript.
 
 ## Usage
 ```typescript
-import { tsts } from './transaction'
+import { tsts } from 'ts-transaction'
 
 tsts.transaction()
     .add(async () => {})
@@ -15,7 +15,6 @@ tsts.transaction()
     .add(async () => {})
     .execute() // executes the transaction
 ```
-See `./demo/demo.ts` for an example.
 
 ## Running
 To build to js, `npm run build:dev`. To run, `npm run run`.
