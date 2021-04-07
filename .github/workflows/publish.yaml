@@ -22,8 +22,7 @@ jobs:
     - name: Change Version
       env: 
         TAG_NAME: ${{github.event.release.tag_name}}
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: npm version "$TAG_NAME"; echo "$TAG_NAME";
+      run: git config user.name "Claeb101"; npm version "$TAG_NAME"; echo "$TAG_NAME";
     # - name: Publish to npm
     #   run: npm publish
     #   env:
