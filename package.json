@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix"
+    "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
+    "build:dev": "tsc -p tsconfig.json",
+    "run": "node dist/index.js"
   },
   "husky": {
     "hooks": {

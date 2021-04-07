@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
 		"experimentalDecorators": true,
-        "lib": ["ESNext", "DOM"],
+        "lib": ["ESNext", "DOM", "es2015"],
         "moduleResolution": "node",
         "noUnusedLocals": false,
         "noUnusedParameters": false,

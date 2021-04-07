@@ -15,5 +15,7 @@ transaction()
     .add(() => {})
     .execute() // executes the transaction
 ```
-
 See `/src/index.ts` for an example.
+
+## Running
+To build to js, `npm run build:dev`. To run, `npm run run`.

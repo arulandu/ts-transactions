@@ -9,23 +9,23 @@ export class Transaction {
 		this.processes = [] as Process[]
 	}
 
-	add(func: () => void): Transaction {
+	add(func: () => Promise<any>): Transaction {
 		this.processes.push(new Process(func, ProcessType.ADD))
 		return this
 	}
 
-	rollback(func: () => void): Transaction {
+	rollback(func: () => Promise<any>): Transaction {
 		this.processes.push(new Process(func, ProcessType.ROLLBACK))
 		return this
 	}
 
-	execute(): boolean {
+	async execute(): Promise<any> {
 		let rollbackInd = -1
 		for (let i = 0; i < this.processes.length; i++) {
 			const process = this.processes[i]
 			if (process.type == ProcessType.ADD) {
 				try {
-					process.func()
+					await process.func()
 				} catch {
 					rollbackInd = i - 1
 					break
@@ -39,7 +39,7 @@ export class Transaction {
 			const process = this.processes[i]
 			if (process.type == ProcessType.ROLLBACK) {
 				try {
-					process.func()
+					await process.func()
 				} catch {
 					console.log(
 						'ERROR: could not run rollback. continuing with other rollbacks.',
@@ -59,10 +59,10 @@ export enum ProcessType {
 
 export class Process {
 	type: ProcessType
-	func: () => void
+	func: () => Promise<any>
 
-	constructor(func: () => void, type: ProcessType) {
-		this.func = func
+	constructor(func: () => Promise<any>, type: ProcessType) {
 		this.type = type
+		this.func = func
 	}
 }
