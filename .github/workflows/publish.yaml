@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: https:/registry.npmjs.org/
+        registry-url: https://registry.npmjs.org/
     - name: Install Packages
       run: npm install # prepare is run as well
     - name: Publish to npm
