@@ -25,6 +25,8 @@ jobs:
       run: |
         git config user.name "Claeb101";
         npm version "$TAG_NAME";
+        git branch -v;
+        git remote -v;
         git push --set-upstream origin main;
     # - name: Publish to npm
     #   run: npm publish
