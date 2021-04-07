@@ -7,6 +7,11 @@
 
 Introducing `ts-transactions`, a functional transactions API for TypeScript.
 
+## Installation
+```bash
+npm install ts-transactions
+```
+
 ## Usage
 ```typescript
 import { tsts } from 'ts-transaction'
