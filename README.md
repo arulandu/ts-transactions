@@ -9,7 +9,7 @@ Introducing `ts-transactions`, a functional transactions API for TypeScript.
 
 ## Usage
 ```typescript
-import tsts from 'ts-transaction'
+import { tsts } from 'ts-transaction'
 ```
 
 ## Example
