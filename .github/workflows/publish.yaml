@@ -23,9 +23,11 @@ jobs:
       env: 
         GITHUB_CONTEXT: $${{toJson(github)}}
         TAG_NAME: ${{github.event.release.tag_name}}
-        REMOTE_REPO: https://${{github.actor}}:${{secrets.ADMIN_GITHUB_TOKEN}}@github.com/${{github.repository}}.git
+        ADMIN_PASS: ${secrets.ADMIN_GITHUB_TOKEN}
+        REMOTE_REPO: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
       run: |
         git config user.name "Claeb101";
+        git config user.password "$ADMIN_PASS";
         git config --list;
         npm version "$TAG_NAME";
         git branch -v;
