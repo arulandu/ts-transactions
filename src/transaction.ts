@@ -1,7 +1,7 @@
 import { Process, ProcessType } from './process'
 
 /**
- * Exposes the root transaction functionally.
+ * Exposes transactions functionally.
  * @returns a new Transaction
  */
 export function transaction(): Transaction {
