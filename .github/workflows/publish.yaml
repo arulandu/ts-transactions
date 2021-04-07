@@ -31,7 +31,7 @@ jobs:
         git config user.name "Claeb101";
         npm version "$TAG_NAME";
         git push $REMOTE_REPO HEAD:main;
-    # - name: Publish to npm
-    #   run: npm publish
-    #   env:
-    #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - name: Publish to npm
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
